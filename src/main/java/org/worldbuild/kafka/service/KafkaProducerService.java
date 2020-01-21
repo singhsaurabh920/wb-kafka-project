@@ -4,13 +4,11 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
+import org.springframework.stereotype.Service;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 import org.worldbuild.kafka.constnat.KafkaConstant;
 import org.worldbuild.kafka.modal.UserDto;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.springframework.stereotype.Service;
 @Log4j2
 @Service
 public class KafkaProducerService {
@@ -26,7 +24,7 @@ public class KafkaProducerService {
                 }
                 @Override
                 public void onFailure(Throwable throwable) {
-                    log.info("SENT " + userDto + " FAILED DUE TO : " + throwable.getMessage());
+                    log.error("SENT " + userDto + " FAILED : ", throwable);
                 }
             });
     }
