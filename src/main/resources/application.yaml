@@ -1,0 +1,14 @@
+server:
+  port: 8071
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: wb24
+      username: wb24-admin
+      password: wb24-admin
+      authentication-database: wb24
+kafka:
+  bootstrap:
+    address:  localhost:9092
