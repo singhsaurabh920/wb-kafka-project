@@ -1,6 +1,7 @@
 package org.worldbuild.kafka.domain.entity;
 
 import org.springframework.data.annotation.TypeAlias;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
@@ -9,6 +10,7 @@ public class User extends BaseEntity {
 
     private String name;
     private String age;
+    @Indexed(unique = true)
     private String username;
     private String password;
     private String address;

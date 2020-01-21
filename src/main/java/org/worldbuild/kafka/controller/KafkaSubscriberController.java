@@ -9,7 +9,6 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Mono;
 
 @Log4j2
 @RestController
@@ -19,7 +18,7 @@ public class KafkaSubscriberController {
     private ApplicationEventPublisher applicationEventPublisher;
 
     @RequestMapping(value = "/user",method = RequestMethod.GET)
-    public Mono<UserDto> userSubscriberHandler(){
-        return Mono.just(new UserDto());
+    public UserDto userSubscriberHandler(){
+        return new UserDto();
     }
 }

@@ -14,7 +14,7 @@
              <PatternLayout pattern="${LOG_PATTERN}"/>
          </File>-->
 
-        <RollingFile name="RollingFileAppender" filePattern="/logs/wb-reactor-kafka/$${date:yyyy-MM-dd}/app-%d{HH}.log">
+        <RollingFile name="RollingFileAppender" filePattern="/logs/wb-kafka-project/$${date:yyyy-MM-dd}/app-%d{HH}.log">
             <PatternLayout pattern="${LOG_PATTERN}"/>
             <Policies>
                 <TimeBasedTriggeringPolicy/>
